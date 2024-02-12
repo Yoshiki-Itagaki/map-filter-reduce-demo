@@ -1,7 +1,10 @@
 import map from "./methods/map";
 import filter from "./methods/filter";
 import reduce from "./methods/reduce";
+import find from "./methods/find";
+import findIndex from "./methods/findIndex";
 import emojipedia from "./emojipedia";
+import substring from "./methods/substring";
 
 var numbers = [3, 56, 2, 48, 5];
 
@@ -22,10 +25,16 @@ console.log(reduceNumbers)
 
 
 //Find - find the first item that matches from an array.
+const finder = new find();
+const matchNumber = finder.findNumbers(numbers);
+console.log(matchNumber);
 
-const newEmojipedia = emojipedia.map(function (emojiEntry){
-  return emojiEntry.meaning.substring(0, 100);
-})
-
-console.log(newEmojipedia);
 //FindIndex - find the index of the first item that matches.
+const indexFinder = new findIndex();
+const matchIndex = indexFinder.findIndexOfNumbers(numbers);
+console.log(matchIndex);
+
+//Locate Substrings of entries
+const substringLocator = new substring();
+const newEmojipedia = substringLocator.locateSubstring(emojipedia);
+console.log(newEmojipedia);
